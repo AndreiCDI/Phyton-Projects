@@ -1,0 +1,51 @@
+import datetime
+from time import strftime
+
+one_to_tw = ['zero', 'one','two','tree', 'four','five','six','seven', 'eight','nine','ten','eleven','twelve']
+t = 0
+user_time_num = 0
+
+current_t = datetime.datetime.now()
+current_t = current_t.time()
+
+current_t = strftime("%I:%M")
+current_h = strftime("%I")
+current_m = strftime("%M")
+
+print (current_t)
+print (current_h)
+print (current_m)
+
+t = int(current_h)
+print (one_to_tw[t], 'time oclock')
+user_time = str(input("Inter time in format hh:mm  "))
+if len(user_time) != 5:
+    print ("wrong format time")
+elif user_time[2] != ':': 
+    print ('wrong format time')
+elif int(user_time[0:2]) > 12:
+    print ('param to much')
+elif int(user_time[0:2]) < 0:
+    print ('param to low')
+elif int(user_time[3:6]) < 0:
+    print ('param to low')
+elif int(user_time[3:6]) > 59:
+    print ('param to much')
+
+else:
+   print (user_time[3:6]) 
+   t = int(user_time[0:2]) 
+   print (one_to_tw[t])
+
+
+      
+    
+
+
+
+
+
+
+
+
+
